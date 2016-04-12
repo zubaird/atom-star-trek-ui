@@ -1,17 +1,17 @@
 @import "ui-variables";
-@tab-radius: 3px;
-@modified-icon-width: 8px;
-@tab-skew: 30deg;
-@tab-top-padding: 5px;
-@tab-bottom-border-height: 5px;
+@tab-radius: 15px;
+@modified-icon-width: 1px;
+@tab-skew: 10deg;
+@tab-top-padding: 4px;
+@tab-bottom-border-height: -3px;
 @tab-border: 1px solid @tab-border-color;
 @tab-max-width: 160px;
 
 .tab-bar {
-  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height + 3;
   background-image: -webkit-linear-gradient(top, @tab-bar-background-color, lighten(@tab-bar-background-color, 9%));
   box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
-  padding: 0 10px 0 25px;
+  padding: 0 0px 0 10px;
   overflow-x: auto;
   overflow-y: hidden;
 
@@ -40,7 +40,7 @@
     line-height: @tab-height;
     color: @text-color;
     padding: 0;
-    margin: 0 20px 0 5px;
+    margin: 0 35px 0 5px;
 
     box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
     transition: color .1s ease-in;
@@ -81,7 +81,7 @@
       z-index: 3;
       text-align: right;
       line-height: @tab-height;
-      color: @text-color;
+      color: yellow;
 
       &:hover {
         color: inherit;
@@ -101,6 +101,8 @@
 
     .title {
       position: relative;
+      text-align: center;
+      font-size: 1.5em;
       z-index: 1;
       padding-right: 10px
     }
@@ -108,7 +110,7 @@
 
   .tab.active {
     z-index: 1;
-    color: @text-color-highlight;
+    color: #000000;
 
     .close-icon {
       line-height: @tab-height - 1px;
@@ -116,7 +118,10 @@
     }
 
     &, &:before, &:after {
-      background: @tab-background-color-active;
+      // background: @tab-background-color-active;
+      color: @text-color;
+      text-decoration: underline;
+      text-decoration-color: 	#f2c300;
       height: @tab-height + 1px;
       box-shadow: none;
     }
